@@ -79,20 +79,21 @@ def align_img_and_pc(img_dir, pc_dir, calib_dir):
     return points
 
 # update the following directories
-IMG_ROOT = '/media/hdc/KITTI/image/training/image_2/'
-PC_ROOT = '/media/hdc/KITTI/point_cloud/raw_bin_files/training/velodyne/'
-CALIB_ROOT = '/media/hdc/KITTI/calib/data_object_calib/training/calib/'
+IMG_ROOT = '/home/acevikel/kitti_dataset/training/image_2/'
+PC_ROOT = '/home/acevikel/kitti_dataset/training/velodyne/'
+CALIB_ROOT = '/home/acevikel/kitti_dataset/calib/training/calib/'
 
 
 
 for frame in range(0, 7481):
+    print ("Processed frame",frame,"of 7481")
     img_dir = IMG_ROOT + '%06d.png' % frame
     pc_dir = PC_ROOT + '%06d.bin' % frame
     calib_dir = CALIB_ROOT + '%06d.txt' % frame
 
     points = align_img_and_pc(img_dir, pc_dir, calib_dir)
     
-    output_name = PC_ROOT + frame + '.bin'
+    output_name = str(PC_ROOT) + str(frame) + '.bin'
     points[:,:4].astype('float32').tofile(output_name)
 
 
