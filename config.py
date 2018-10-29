@@ -18,12 +18,12 @@ __C = edict()
 cfg = __C
 
 # for dataset dir
-__C.DATA_DIR = '/home/acevikel/kitti_dataset/'
-__C.CALIB_DIR = '/home/acevikel/kitti_dataset/calib/training/calib'
+__C.DATA_DIR = '/home/ubuntu/DATA_DIR/'
+__C.CALIB_DIR = '/home/ubuntu/CALIB_DIR/training/calib'
 
 
 # for gpu allocation
-__C.GPU_AVAILABLE = '0,1'
+__C.GPU_AVAILABLE = '0'
 __C.GPU_USE_COUNT = len(__C.GPU_AVAILABLE.split(','))
 __C.GPU_MEMORY_FRACTION = 1
 
