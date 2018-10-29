@@ -2,7 +2,7 @@ import os
 import sys
 
 #CHANGE THIS
-data_dir = "/home/acevikel/kitti_dataset/"
+data_dir = "/home/ubuntu/DATA_DIR/"
 ########################################
 
 
@@ -28,7 +28,7 @@ make_directory_safe(data_dir+"validation/velodyne")
 try:
     val = open("val.txt","r").read().split()
 except:
-    print "Split protocol file val.txt does not exists or invalid, please put that file in to voxelnet/data folder"
+    print ("Split protocol file val.txt does not exists or invalid, please put that file in to voxelnet/data folder")
     sys.exit()
 
 split_subdir("image_2",val)
